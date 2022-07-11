@@ -1,0 +1,34 @@
+{
+  "name": "csy-dicomweb-qido-rs",
+  "version": "0.1.0",
+  "description": "This is a private repository to generate URL for DICOMweb QIDO-RS.",
+  "main": "index.js",
+  "scripts": {
+    "release": "npx standard-version",
+    "release-major": "npx standard-version --release-as major",
+    "release-minor": "npx standard-version --release-as minor",
+    "release-patch": "npx standard-version --release-as patch",
+    "commit": "npx cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JieuTang/CSY-DICOMweb-QIDO-RS.git"
+  },
+  "keywords": [
+    "DICOM",
+    "DICOMweb",
+    "QIDO-RS"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JieuTang/CSY-DICOMweb-QIDO-RS/issues"
+  },
+  "homepage": "https://github.com/JieuTang/CSY-DICOMweb-QIDO-RS#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "husky": "^8.0.1",
+    "url-parse": "^1.5.10"
+  }
+}
