@@ -3,6 +3,7 @@
   "version": "0.1.1",
   "description": "This is a private repository to generate URL for DICOMweb QIDO-RS.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "release": "npx standard-version",
     "release-major": "npx standard-version --release-as major",
