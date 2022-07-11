@@ -29,7 +29,9 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "husky": "^8.0.1",
+    "husky": "^8.0.1"
+  },
+  "dependencies": {
     "url-parse": "^1.5.10"
   }
 }
