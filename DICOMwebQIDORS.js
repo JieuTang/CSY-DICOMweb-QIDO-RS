@@ -144,6 +144,4 @@ class DICOMwebQIDORS {
     }
 }
 
-
-
 export default DICOMwebQIDORS;
