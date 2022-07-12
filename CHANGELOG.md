@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/JieuTang/CSY-DICOMweb-QIDO-RS/compare/v0.1.5...v0.2.0) (2022-07-12)
+
+
+### Features
+
+* studies level QIDO-RS retrieval is enable ([86b4adb](https://github.com/JieuTang/CSY-DICOMweb-QIDO-RS/commit/86b4adb9d71026521cb113523766058b9a2c630f))
+
 ### [0.1.5](https://github.com/JieuTang/CSY-DICOMweb-QIDO-RS/compare/v0.1.4...v0.1.5) (2022-07-12)
 
 ### [0.1.4](https://github.com/JieuTang/CSY-DICOMweb-QIDO-RS/compare/v0.1.3...v0.1.4) (2022-07-11)
