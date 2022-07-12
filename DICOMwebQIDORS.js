@@ -16,7 +16,7 @@ class DICOMwebQIDORS {
         
         //Token
         this.isUseToken = false;
-        this.tokenValue = undefined;
+        this.tokenObject = undefined;
 
         //url-parse package
         this.hostname = undefined;
@@ -51,8 +51,16 @@ class DICOMwebQIDORS {
         }
     }
 
-    async setUseToken(isUseToken = true, tokenValue) {
-        throw "This function is inactivate.";
+    async setUseToken(tokenObject) {
+
+        //tokenObject 不是 Object 就跳錯誤
+        if(!(_.isObject(tokenObject))) {
+            throw "tokenValue must be object type."
+        }
+
+        this.isUseToken = true;
+        this.tokenObject = tokenObject;
+        throw "Here is function setUseToken(). This function is not enable in this version.";
     }
 
     async _loadQIDOParameter() {
@@ -69,10 +77,6 @@ class DICOMwebQIDORS {
 
     async _getCombinedObjectWithInvertObject(object1) {
         return _.assign(object1, _.invert(object1));
-    }
-
-    async _validateTokenCanUse() {
-        throw "This function is inactivate.";
     }
 
     async _validateUrlComponent() {
@@ -126,19 +130,26 @@ class DICOMwebQIDORS {
     }
 
     async _querySeries() {
-        throw "This function is inactivate.";
+        throw "Here is Query Series Level in QIDO-RS. This function is not enable in this version.";
     }
 
     async _queryInstances() {
-        throw "This function is inactivate.";
+        throw "Here is Query Instances Level in QIDO-RS. This function is not enable in this version.";
     }
 
     async _getRequestResponse(url) {
         let result = undefined;
+        let response = undefined;
+        
+        if (this.isUseToken) {
+            response = await fetch(url, {
+                headers: this.tokenObject
+            });
+        } else {
+            response = await fetch(url);
+        }
 
-        const response = await fetch(url);
-        const data = await response.json();
-        result = data;
+        result = await response.json();
 
         return result;
     }
