@@ -41,9 +41,9 @@ tempQueryParameter.offset = "0";
 qido.queryParameter = tempQueryParameter;
 
 //設定 Token:現在尚未啟用
-// let myHeaders = {
-//     "token": "jf903j2vunf9843nvyf934qc"
-// };
+// let myHeaders = {};
+
+// myHeaders.token = "jf903j2vunf9843nvyf934qc";
 // await qido.setUseToken(myHeaders);
 
 //查詢 同步模式
