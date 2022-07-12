@@ -33,6 +33,7 @@
     "husky": "^8.0.1"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "url-parse": "^1.5.10"
   },
   "config": {
