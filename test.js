@@ -20,9 +20,9 @@ let qido = new QIDO();
 
     qido.queryParameter = tempQueryParameter;
 
-    // let myHeaders = {
-    //     "token": "jf903j2vunf9843nvyf934qc"
-    // };
+    // let myHeaders = {};
+
+    // myHeaders.token = "jf903j2vunf9843nvyf934qc";
     // await qido.setUseToken(myHeaders);
 
     await qido.query();
