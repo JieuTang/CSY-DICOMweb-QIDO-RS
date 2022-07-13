@@ -1,6 +1,6 @@
 {
   "name": "csy-dicomweb-qido-rs",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "This is a private repository to generate URL for DICOMweb QIDO-RS.",
   "main": "DICOMwebQIDORS.js",
   "type": "module",
