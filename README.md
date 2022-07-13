@@ -25,8 +25,8 @@ let qido = new QIDO();
 //"必須"自己初始化
 await qido.init();
 
-//查詢模式設定：studies、series、instances
-qido.queryMode = "studies";
+//查詢階層設定：studies、series、instances
+qido.queryLevel = "studies";
 
 //有使用到的套件參數設定：url-parse package
 qido.hostname = "test.dicom.tw";
