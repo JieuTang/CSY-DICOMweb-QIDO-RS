@@ -1,5 +1,5 @@
 # CSY-DICOMweb-QIDO-RS
-This is a private repository to generate the URL and to request to PACS for DICOMweb QIDO-RS.
+This private repository generates the URL and requests PACS for DICOMweb QIDO-RS.
 
 ## DICOM QIDO Parameter
 ### Required Matching Attributes
