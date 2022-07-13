@@ -3,7 +3,7 @@ import _ from "lodash";
 import fetch from 'node-fetch';
 
 import QIDOParameter from "./Config/QIDOParameter.json" assert {type: "json"};
-import QueryMode from "./Config/QueryMode.json" assert {type: "json"};
+import QueryLevel from "./Config/QueryLevel.json" assert {type: "json"};
 import AllowProtocol from "./Config/AllowProtocol.json" assert {type: "json"};
 
 class DICOMwebQIDORS {
@@ -26,7 +26,7 @@ class DICOMwebQIDORS {
         this.queryParameter = undefined
 
         //Query Mode
-        this.queryMode = undefined;
+        this.queryLevel = undefined;
 
         //Response
         this.response = undefined;
@@ -37,17 +37,17 @@ class DICOMwebQIDORS {
     }
 
     async query() {
-        await this._validateQueryMode();
+        await this._validateQueryLevel();
         await this._validateUrlComponent();
 
-        if (this.queryMode === QueryMode.studies) {
+        if (this.queryLevel === QueryLevel.studies) {
             await this._queryStudies();
-        } else if (this.queryMode === QueryMode.series) {
+        } else if (this.queryLevel === QueryLevel.series) {
             await this._querySeries();
-        } else if (this.queryMode === QueryMode.instances) {
+        } else if (this.queryLevel === QueryLevel.instances) {
             await this._queryInstances();
         } else {
-            throw "queryMode Error";
+            throw "queryLevel Error";
         }
     }
 
@@ -108,19 +108,19 @@ class DICOMwebQIDORS {
         
     }
 
-    async _validateQueryMode() {
+    async _validateQueryLevel() {
         //falsy value: null、undefined、NaN、emptyString、0、false
         //https://262.ecma-international.org/5.1/#sec-9.2
-        //如果 queryMode 數值是 falsy 值，就代表是錯的。
-        if (!(_.get(QueryMode, this.queryMode))) {
-            throw "QueryMode Value Error! \nQueryMode ValueSet is [" + _.keys(QueryMode) + "]";
+        //如果 queryLevel 數值是 falsy 值，就代表是錯的。
+        if (!(_.get(QueryLevel, this.queryLevel))) {
+            throw "QueryLevel Value Error! \nQueryLevel ValueSet is [" + _.keys(QueryLevel) + "]";
         }
     }
 
     async _queryStudies() {
         let url = new URL();
         url.set('hostname', this.hostname);
-        url.set('pathname', this.pathname + "/" + QueryMode.studies);
+        url.set('pathname', this.pathname + "/" + QueryLevel.studies);
         url.set('port', this.port);
         url.set('protocol', AllowProtocol[this.protocol]);
         url.set('query', this.queryParameter);

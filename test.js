@@ -6,7 +6,7 @@ let qido = new QIDO();
     
     await qido.init();
     
-    qido.queryMode = "studies";
+    qido.queryLevel = "studies";
     qido.hostname = "test.dicom.tw";
     qido.pathname = "/dicomWeb";
     qido.protocol = "http";
