@@ -25,7 +25,7 @@ class DICOMwebQIDORS {
         this.protocol = undefined;
         this.queryParameter = undefined
 
-        //Query Mode
+        //Query Level
         this.queryLevel = undefined;
 
         //Response
