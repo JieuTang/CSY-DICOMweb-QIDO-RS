@@ -21,9 +21,9 @@ export default class DICOMwebQIDORS {
     //Response
     response: Object | undefined;
 
-   async init(): void;
+   init(): Promise<void>;
    
-   async query(): void;
+   query(): Promise<void>;
    
-   async setUseToken(tokenObject: Object): void;
+   setUseToken(tokenObject: Object): Promise<void>;
 }
