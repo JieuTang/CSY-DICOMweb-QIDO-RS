@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.9](https://github.com/JieuTang/CSY-DICOMweb-QIDO-RS/compare/v0.2.8...v0.2.9) (2022-07-29)
+
+
+### Features
+
+* add TypeScript Declaration File ([b8ef4fd](https://github.com/JieuTang/CSY-DICOMweb-QIDO-RS/commit/b8ef4fd86c1a7f9cc3ab4e702b3b6ad2fc85cb1e))
+
+
+### Bug Fixes
+
+* typescript declaration file change filename ([9aa094f](https://github.com/JieuTang/CSY-DICOMweb-QIDO-RS/commit/9aa094f45c94a8601404d434e7c1e39b2858579c))
+* typescript declaration file don't need async keyword ([a4ccee8](https://github.com/JieuTang/CSY-DICOMweb-QIDO-RS/commit/a4ccee8b8ab1b8bab214f6095051e311a803a469))
+
 ### [0.2.8](https://github.com/JieuTang/CSY-DICOMweb-QIDO-RS/compare/v0.2.7...v0.2.8) (2022-07-13)
 
 ### [0.2.7](https://github.com/JieuTang/CSY-DICOMweb-QIDO-RS/compare/v0.2.6...v0.2.7) (2022-07-13)
