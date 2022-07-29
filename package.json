@@ -1,15 +1,26 @@
 {
   "name": "csy-dicomweb-qido-rs",
   "version": "0.2.8",
-  "description": "This private repository generates the URL and requests PACS for DICOMweb QIDO-RS.",
-  "main": "DICOMwebQIDORS.js",
-  "type": "module",
+  "description": "This repository generates the URL and requests PACS for DICOMweb QIDO-RS.",
+  "main": "lib/DICOMwebQIDORS.js",
+  "types": "lib/DICOMwebQIDORS.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
+    "commit": "npx cz",
     "release": "npx standard-version",
     "release-major": "npx standard-version --release-as major",
     "release-minor": "npx standard-version --release-as minor",
     "release-patch": "npx standard-version --release-as patch",
-    "commit": "npx cz"
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
@@ -29,12 +40,18 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "cz-conventional-changelog": "^3.3.0",
-    "husky": "^8.0.1"
+    "commitizen": "^4.2.5",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.7.4"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.182",
+    "@types/url-parse": "^1.4.8",
     "lodash": "^4.17.21",
-    "node-fetch": "^3.2.7",
+    "node-fetch": "^3.2.9",
     "url-parse": "^1.5.10"
   },
   "config": {

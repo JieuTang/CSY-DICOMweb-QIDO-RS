@@ -1,4 +1,4 @@
-{
+export default {
     "Terminology": {
         "match": "match",
         "fuzzymatching": "fuzzymatching",
