@@ -1,6 +1,6 @@
 {
   "name": "csy-dicomweb-qido-rs",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "This repository generates the URL and requests PACS for DICOMweb QIDO-RS.",
   "main": "lib/DICOMwebQIDORS.js",
   "types": "lib/DICOMwebQIDORS.d.ts",
