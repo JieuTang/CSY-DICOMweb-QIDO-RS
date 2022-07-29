@@ -4,6 +4,7 @@
   "description": "This repository generates the URL and requests PACS for DICOMweb QIDO-RS.",
   "main": "lib/DICOMwebQIDORS.js",
   "types": "lib/DICOMwebQIDORS.d.ts",
+  "type": "module",
   "files": [
     "lib/**/*"
   ],
@@ -50,8 +51,8 @@
   "dependencies": {
     "@types/lodash": "^4.14.182",
     "@types/url-parse": "^1.4.8",
+    "axios": "^0.27.2",
     "lodash": "^4.17.21",
-    "node-fetch": "^3.2.9",
     "url-parse": "^1.5.10"
   },
   "config": {

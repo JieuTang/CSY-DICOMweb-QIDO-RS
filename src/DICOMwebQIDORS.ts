@@ -1,6 +1,6 @@
 import URL from "url-parse";
 import _ from "lodash";
-import fetch from 'node-fetch';
+import axios, { AxiosRequestHeaders } from "axios";
 
 import QIDOParameter from "./config/QIDOParameter.config";
 import QueryLevel from "./config/QueryLevel.config";
@@ -13,7 +13,7 @@ class DICOMwebQIDORS {
     studyParameterList: object = {};
     seriesParameterList: object = {};
     instanceParameterList: object = {};
-    
+
     // Token
     isUseToken: boolean = false;
     tokenObject: object = {};
@@ -54,7 +54,7 @@ class DICOMwebQIDORS {
     async setUseToken(tokenObject: object) {
 
         // tokenObject 不是 Object 就跳錯誤
-        if(!(_.isObject(tokenObject))) {
+        if (!(_.isObject(tokenObject))) {
             console.log("tokenValue must be object type.");
         }
 
@@ -118,7 +118,7 @@ class DICOMwebQIDORS {
                 console.log("Key value: " + _.toString(key) + " is no allow.");
             }
         })
-        
+
     }
 
 
@@ -144,19 +144,44 @@ class DICOMwebQIDORS {
         console.log("Here is Query Instances Level in QIDO-RS. This function is not enable in this version.");
     }
 
-    async _getRequestResponse(url: string): Promise<object> {
-        let result: object | undefined;
-        let response;
-        
+    async _getRequestResponse(inputUrl: string): Promise<object> {
+        let result: object = {};
+        let response = {};
+
         if (this.isUseToken) {
-            response = await fetch(url, {
-                headers: this.tokenObject as HeadersInit
-            });
+            await axios({
+                method: "get",
+                url: inputUrl,
+                headers: this.tokenObject as AxiosRequestHeaders
+            }).then(
+                (res) => {
+                    response = _.cloneDeep(res.data);
+                })
+                .catch((error) => console.log(error))
+
         } else {
-            response = await fetch(url);
+            await axios({
+                method: "get",
+                url: inputUrl,
+            }).then(
+                (res) => {
+                    response = _.cloneDeep(res.data);
+                })
+                .catch((error) => console.log(error))
+
+
+
+            // try {
+            //     response = await (await axios.get(url)).data;
+            //     result = response;
+            // } catch (error) {
+            //     if (axios.isAxiosError(error)) {
+            //         console.log(error);
+            //     }
+            // }
         }
 
-        result = await response.json() as object;
+        result = _.cloneDeep(response);
 
         return result;
     }

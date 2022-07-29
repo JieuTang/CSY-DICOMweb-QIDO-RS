@@ -82,10 +82,10 @@ await qido.init();
 qido.queryLevel = "studies";
 
 //有使用到的套件參數設定：url-parse package
-qido.hostname = "hackathon.raccoon.dicom.tw";
-qido.pathname = "/dicom-web";
-qido.protocol = "https";
-qido.port = "443";
+qido.hostname = "test.dicom.tw";
+qido.pathname = "/dicomWeb";
+qido.protocol = "http";
+qido.port = "999";
 
 //查詢參數設定：DICOM QIDO-RS Parameter
 let tempQueryParameter = {};
